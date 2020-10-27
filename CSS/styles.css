@@ -3,9 +3,10 @@
     height: 150px;
 }
 
-.h1{
+.header h1{
     color: #F5F5F5;
     font-size: 40px;
+    text-align: center;  
 }
 
 .a{
@@ -13,4 +14,15 @@
     text-decoration: none;
     font-size: 15px;
     align-items: flex-start;
+}
+body{
+  font-family: 'Trispace', sans-serif;
+}
+.title{
+  color: #F5F5F5;
+  text-align: center; 
+  padding-top: 50px;
+}
+.imagelogin{
+  text-align: center;
 }
