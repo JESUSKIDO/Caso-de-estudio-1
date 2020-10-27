@@ -1,0 +1,16 @@
+.header{
+    background: url(../IMG/fondoheader.jpg);
+    height: 150px;
+}
+
+.h1{
+    color: #F5F5F5;
+    font-size: 40px;
+}
+
+.a{
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 15px;
+    align-items: flex-start;
+}
