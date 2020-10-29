@@ -1,3 +1,12 @@
+<?php
+    include_once 'conexion.php';
+    $objeto = new Conexion();
+    $conexion=$objeto->Conectar();
+     $consulta="SELECT * FROM clientes";
+     $resultado=$conexion->prepare($consulta);
+     $resultado->execute();
+     $clientes=$resultado->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,58 +30,33 @@
      </div>
      <div style="text-align: center;">
         <table> 
-            <tr>
-                    <th>User_id</th>
-                    <th>Correo</th>
-                    <th>Contraseña</th>
-                    <th>Nombre</th>
-                    <th>Sexo  </th>
-                    <th>Compras</th>
-                    </tr>
-                    <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td>
-            </tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td></tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td></tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td></tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td></tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td></tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td>M</td>
-                    <td><a href="toplibros.php">12</a></td></tr>
+                <thead>
+                        <tr>
+                                <th>User_id</th>
+                                <th>Correo</th>
+                                <th>Contraseña</th>
+                                <th>Nombre</th>
+                                <th>Compras </th>
+                                <th>Tipo</th>
+                        </tr>
+                </thead>
+                <tbody>
+                       <?php
+                                foreach($clientes as $clientes){
+                       ?> 
+                       <tr>
+                               <td><?php echo $clientes['Id'] ?></td>
+                               <td><?php echo $clientes['Correo'] ?></td>
+                               <td><?php echo $clientes['Password'] ?></td>
+                               <td><?php echo $clientes['Nombre'] ?></td>
+                               <td><?php echo $clientes['NumCompras'] ?></td>
+                               <td><?php echo $clientes['Tipo'] ?></td>
+                               
+                       </tr>
+                       <?php
+                                } 
+                       ?>
+                </tbody>
         </table>
 
      </div>               
