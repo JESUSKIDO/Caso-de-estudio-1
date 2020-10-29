@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="CSS/styles2.css">
     <div class="header">
         <h1>Librería</h1>
-        <a href="ingresar.php">Ingresar</a>
         <a  href="libros.php">Compras</a>
         <a  href="carrito.php">Carrito</a>
     </div>
