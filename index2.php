@@ -47,12 +47,14 @@
                        <?php
                                 foreach($clientes as $clientes){
                        ?> 
-                       <tr>
-                               <td><?php echo $clientes['Imagen'] ?></td>
+                       <tr> 
+                                <td>
+                                    <?php echo "<img src='data:image/jpg;base64," . base64_encode($clientes['Imagen']) . "' />"; ?>
+                            </td>
                                <td><?php echo $clientes['Nombre'] ?></td>
                                <td><?php echo $clientes['Costo'] ?></td>
                                <td>
-                               <input type="button" value="AGREGAR"style="width: 100px;;height:30px;" >
+                               <input width="100" type="button" value="AGREGAR"style="width: 100px;height:30px;" >
                                </td>
                        </tr>
                        <?php

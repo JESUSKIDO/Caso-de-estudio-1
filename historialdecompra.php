@@ -2,7 +2,7 @@
     include_once 'conexion.php';
     $objeto = new Conexion();
     $conexion=$objeto->Conectar();
-     $consulta="SELECT * FROM compras";
+     $consulta="SELECT * FROM libros";
      $resultado=$conexion->prepare($consulta);
      $resultado->execute();
      $clientes=$resultado->fetchAll(PDO::FETCH_ASSOC);
