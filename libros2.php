@@ -31,6 +31,9 @@
                     <button type="submit">AGREGAR</button>
                 </div>
             </form>
+            <div>
+                <h2 style="text-align: center; margin-top: 15px; color: red;">REGISTRO REALIZADO CORRECTAMENTE!!!</h2>
+            </div>
         </div>
 </body>
 </html>
