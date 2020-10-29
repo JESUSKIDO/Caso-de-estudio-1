@@ -50,3 +50,11 @@
 body{
     font-family: 'Trispace', sans-serif;
 }
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: separate;
+    border-spacing: 5px;
+  
+  }

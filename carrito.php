@@ -67,10 +67,25 @@
         </table>
 
      </div>    
-     <div style="text-align: center;">
-     <input type="button" value="PAGAR"  style="width:300px;height:80px;font-size: 30px;">
-        <img src="IMG/carrito.png"style="width:100px;height:100px;">
-    </div>         
+        <div style="text-align: center;padding-right: 1200px;">
+        <label for="envio"style="font-size:20;">Metodo de Envio</label>
+                 <select name="envio" id="envio">
+                        <option>DHL</option>
+                        <option >Fedex</option>
+                        <option >UPS</option>
+                        <option >Estafeta</option>
+                </select>
+                <label for="pago"style="font-size:20;padding-left:50px;">Metodo de Pago</label>
+                 <select name="pago" id="pago">
+                        <option>Tarjeta de Debito</option>
+                        <option >Tarjeta de Credito</option>
+                        <option >OXXO</option>
+                </select>
+        </div>
+        <div style="text-align: center;padding-top:30xp;">
+                <input type="button" value="PAGAR"  style="width:300px;height:80px;font-size: 30px;">
+          <img src="IMG/carrito.png"style="width:100px;height:100px;">
+         </div>         
     
 </div>
 </body>
