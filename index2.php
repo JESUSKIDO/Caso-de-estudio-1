@@ -1,3 +1,12 @@
+<?php
+    include_once 'conexion.php';
+    $objeto = new Conexion();
+    $conexion=$objeto->Conectar();
+     $consulta="SELECT * FROM libros";
+     $resultado=$conexion->prepare($consulta);
+     $resultado->execute();
+     $clientes=$resultado->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +15,7 @@
     <title>BookShop</title>
 </head>
 <body>
+    <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/styles2.css">
     <div class="header">
         <h1>Librería</h1>
@@ -20,6 +30,36 @@
         <p>compra los libros de tu agrado y se parte de </p>
         <p>toda nuestra comunidad.</p>
     </div>
-
+    <div style="text-align: center;background-color:  rgb(92, 182, 167);">
+            <h1 style="text-aling:center;">Libros en Venta</h1>
+     </div>
+    <div style="text-align: center;">
+        <table> 
+                <thead>
+                        <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Costo</th>
+                                <th>Agregar</th>
+                        </tr>
+                </thead>
+                <tbody>
+                       <?php
+                                foreach($clientes as $clientes){
+                       ?> 
+                       <tr>
+                               <td><?php echo $clientes['Imagen'] ?></td>
+                               <td><?php echo $clientes['Nombre'] ?></td>
+                               <td><?php echo $clientes['Costo'] ?></td>
+                               <td>
+                               <input type="button" value="AGREGAR"style="width: 100px;;height:30px;" >
+                               </td>
+                       </tr>
+                       <?php
+                                } 
+                       ?>
+                </tbody>
+        </table>
+    </div>
 </body>
 </html>

@@ -1,3 +1,12 @@
+<?php
+    include_once 'conexion.php';
+    $objeto = new Conexion();
+    $conexion=$objeto->Conectar();
+     $consulta="SELECT * FROM libros";
+     $resultado=$conexion->prepare($consulta);
+     $resultado->execute();
+     $clientes=$resultado->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,45 +24,35 @@
             <h1 style="text-aling:center;">Ranking de los Libros</h1>
      </div>
      <divs tyle="text-align: center;">
-        <table> 
-            <tr>
-                    <th>Posicion</th>
-                    <th>Nombre del Libro</th>
-                    <th>Nombre del Autor</th>
-                    <th>Copias vendidas</th>
-                    </tr>
-                    <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    
-            </tr>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-            <tr><td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
+     <table> 
+                <thead>
+                        <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Genero</th>
+                                <th>Comprados</th>
+                                <th>Disponibles </th>
+                                <th>Costo</th>
+                                <th>Imagen</th>
+                        </tr>
+                </thead>
+                <tbody>
+                       <?php
+                                foreach($clientes as $clientes){
+                       ?> 
+                       <tr>
+                               <td><?php echo $clientes['Id'] ?></td>
+                               <td><?php echo $clientes['Nombre'] ?></td>
+                               <td><?php echo $clientes['Genero'] ?></td>
+                               <td><?php echo $clientes['Comprados'] ?></td>
+                               <td><?php echo $clientes['Disponibles'] ?></td>
+                               <td><?php echo $clientes['Costo'] ?></td>
+                               <td><?php echo $clientes['Imagen'] ?></td>
+                       </tr>
+                       <?php
+                                } 
+                       ?>
+                </tbody>
         </table>
 
      </div>               
