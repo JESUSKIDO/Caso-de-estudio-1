@@ -14,16 +14,17 @@
     <div style="text-align: center;">
     <img src="IMG/login.png" style="width:150px;height:150px;padding-top:30px;">
     </div>
-    <div > 
-        <input type="text" name="email" placeholder="Ingresa tu email">
-    </div>
-    <div >
-        <input type="password" name="password" placeholder="Ingresa tu contraseña">
-    </div>
-    <div class="inputS">
-        <input type="button" value="ENVIAR"  style="width:200px;height:30px;padding-top:5xp;">
-    </div>
-  
+    <form method="post" action="database.php">
+        <div > 
+            <input type="text" name="email" placeholder="Ingresa tu email">
+        </div>
+        <div >
+            <input type="password" name="password" placeholder="Ingresa tu contraseña">
+        </div>
+        <div class="inputS">
+            <button type="submit" style="width:200px;height:30px;padding-top:5xp;">ENVIAR</button>
+        </div>
+    </form>
    
 </div>
 </body>
